@@ -1,137 +1,4 @@
-﻿#################################### 顺序查找：查找无序表和有序表 ####################################
-'''
-思想：通过下标，按顺序查找数据项
-时间复杂度：O(n)
-'''
-
-
-def searchUnorder(alist, item):
-    '''
-    顺序查找无序表，时间复杂度为O（n）
-    
-    输入：
-        alist - 列表，查找的目标列表
-        item - 实数，查找的数据项
-        
-    返回：
-        found - True/False，是否找到
-    '''
-    pos = 0
-    found = False
-    
-    while pos < len(alist) and not found:
-        if alist[pos] == item:
-            found = True
-        else:
-            pos += 1
-            
-    return found
-
-
-# 测试
-print(searchUnorder([1,2,3,4,5,6,7], 8))
-
-
-def searchOrder(alist, item):
-    '''
-    顺序查找有序表，时间复杂度为O（n）
-    
-    输入：
-        alist - 有序列表，从小到大，查找的目标列表
-        item - 实数，查找的数据项
-        
-    返回：
-        found - True/False，是否找到
-    '''
-    pos = 0
-    found = False
-    stop = False
-    
-    while pos < len(alist) and not found and not stop:
-        if alist[pos] == item:
-            found = True
-        else:
-            if alist[pos] > item:
-                stop = True
-            else:
-                pos += 1
-    
-    return found
-
-
-# 测试
-print(searchOrder([1,2,3,4,5,6,7], 1))
-
-
-######################################### 二分查找：有序表 ##########################################
-'''
-思想：针对有序表。每次比较查找值和表的中间项，若不相等，则缩小查找范围，继续进行二分查找。
-实现：可用常规算法流程编程，也可用递归算法。
-时间复杂度：O(nlog n)
-'''
-
-
-def binarySearchUsual(alist, item):
-    '''
-    二分查找算法，查找有序表
-    
-    输入：
-        alist - 有序列表，从小到大，查找的目标列表
-        item - 实数，查找的数据项
-        
-    返回：
-        found - True/False，是否找到
-    '''
-    first = 0
-    last = len(alist) - 1
-    found = False
-    
-    while first <= last and not found:
-        midPoint = (first + last) // 2
-        if alist[midPoint] == item:
-            found = True
-        else:
-            if alist[midPoint] > item:
-                last = midPoint - 1
-            else:
-                first = midPoint + 1
-    
-    return found
-
-
-# 测试
-print(binarySearchUsual([1,2,13,24,35,36,47], 13))
-
-
-def binarySearchRec(alist, item):
-    '''
-    递归算法实现二分查找
-    
-    输入：
-        alist - 有序列表，从小到大，查找的目标列表
-        item - 实数，查找的数据项
-        
-    返回：
-        found - True/False，是否找到
-    '''
-    if len(alist) == 0:
-        return False
-    else:
-        midPoint = len(alist) // 2
-        if alist[midPoint] == item:
-            return True
-        else:
-            if item < alist[midPoint]:
-                return binarySearchRec(alist[ : midPoint], item)
-            else:
-                return binarySearchRec(alist[midPoint+1 :], item)
-
-
-# 测试
-print(binarySearchRec([1,2,13,24,35,36,47], 13))
-
-
-########################################### 冒泡排序 ###########################################
+﻿########################################### 冒泡排序 ###########################################
 '''
 思想：若有n个数待排序，则比较n-1趟，在每趟中相邻两元素进行比较，逆序则交换次序。
       每趟比较会“浮出”一个最大值或最小值。
@@ -155,10 +22,8 @@ def bubbleSort(alist):
                 alist[i], alist[i+1] = alist[i+1], alist[i]
     return alist
 
-
 # 测试
 print(bubbleSort([15,2,4,1,6,8,5,95,0]))
-
 
 def shortBubbleSort(alist):
     '''
@@ -182,10 +47,8 @@ def shortBubbleSort(alist):
         passnum -= 1
     return alist
 
-
 # 测试
 print(shortBubbleSort([15,2,4,1,6,8,5,95,0]))
-
 
 ########################################### 选择排序 #########################################
 '''
@@ -212,10 +75,8 @@ def selectionSort(alist):
     
     return alist
 
-
 # 测试
 print(selectionSort([15,2,4,1,6,8,5,95,0]))
-
 
 ######################################### 插入排序 #############################################
 '''
@@ -241,7 +102,6 @@ def insertSort(alist):
             position -= 1
         alist[position] = currentValue
     return alist
-
 
 # 测试
 print(insertSort([15,2,4,1,6,8,5,95,0]))
@@ -278,7 +138,6 @@ def shellSort(alist):
         subListGap = subListGap // 2
     return alist       
 
-
 def gapInsertSort(alist, start, gap):
     '''
     在整个列表alist上，对带间隔的子列表进行插入排序
@@ -303,7 +162,6 @@ def gapInsertSort(alist, start, gap):
         alist[position] = currentValue
     
     return alist
-
 
 # 测试
 print(shellSort([15,2,4,1,6,8,5,95,0]))
@@ -363,10 +221,8 @@ def mergeSort(alist):
     
     return alist
 
-
 # 测试
 print(mergeSort([15,2,4,1,6,8,5,95,0]))
-
 
 def merge_Sort(alist):
     '''
@@ -396,7 +252,6 @@ def merge_Sort(alist):
     merged.extend(rightHalf if rightHalf else leftHalf)
     
     return merged
-
 
 # 测试
 print(merge_Sort([15,2,4,1,6,8,5,95,0]))
@@ -493,7 +348,7 @@ def partition(alist, first, last):
 # 测试
 alist = [15,2,4,1,6,8,5,95,0]
 quickSort(alist)
-print(alist)
+alist
 
 
 
