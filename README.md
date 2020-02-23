@@ -5,11 +5,11 @@
 
 1.Stack - 栈
 
-2.Linked List - 链表
+2.Queue - 队列
 
-3.Queue - 队列
+3.Deque - 双端队列
 
-4.Deque - 双端队列
+4.Linked List - 链表
 
 5.Recursive Function - 递归算法
 
