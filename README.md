@@ -5,10 +5,14 @@
 
 1.Stack - 栈
 
-2.Queue and Deque - 队列和双端队列
+2.Linked List - 链表
 
-3.Linked List - 链表
+3.Queue - 队列
 
-4.Recursive Function - 递归算法
+4.Deque - 双端队列
 
-5.Sequence and Search - 排序和查找（包含顺序查找、二分查找、冒泡排序、选择排序、插入排序、希尔排序、归并排序、快速排序）
+5.Recursive Function - 递归算法
+
+6.Search and Hash - 查找和散列（包含顺序查找、二分查找、散列、基于散列表的映射结构的定义）
+
+7.Sequence - 排序算法（包含冒泡排序、选择排序、插入排序、希尔排序、归并排序、快速排序）
