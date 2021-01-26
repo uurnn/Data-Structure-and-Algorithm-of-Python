@@ -1,7 +1,5 @@
 ﻿class Node:
-    '''
-    创建节点，包含数据项和指针
-    '''
+    '''节点'''
     # 初始化节点，数据项为设定值，指针指向None
     def __init__(self,initdata):
         self.data = initdata
@@ -25,7 +23,7 @@
 
 
 class UnorderedList:
-    '''链表实现无序表'''
+    '''链表'''
     # 头指针初始化为None
     def __init__(self):
         self.head = None
