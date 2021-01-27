@@ -21,4 +21,6 @@
 
 9.并查集 - 表示图的动态连通性，用森林实现图的动态连通，用数组/字典具体实现。
 
-  另：发现了个好的刷题资料：https://labuladong.gitbook.io/algo/
+10.LRU、LFU缓存机制 - 基于hash+双向链表，get和push的时间复杂度均为O(1)。
+
+另：发现了个好的刷题资料：https://labuladong.gitbook.io/algo/
