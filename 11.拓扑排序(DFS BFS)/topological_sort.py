@@ -38,6 +38,7 @@ class DFSSolution:
 
 
 class BFSSolution:
+    # BFS拓扑排序
     def findOrder(self, numCourses, prerequisites):
         if numCourses < 0:
             return []
